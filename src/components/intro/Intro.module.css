@@ -1,0 +1,11 @@
+.makeItRed {
+    color:red
+}
+
+.addBlur {
+    filter: blur(8px);
+}
+
+.removeBlur {
+    filter: none;
+}

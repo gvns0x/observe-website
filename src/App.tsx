@@ -21,14 +21,13 @@ function App() {
     }
   }, [])
 
-
   return (
     <>
-    <wrapper style={{height: "1500px"}}>
-      <div style={{ position: "sticky", top: "50%" }}>
-        <Intro scrollNumber={scrollNumber}/>
+      <div className='wrapper' style={{ height: "1500px" }}>
+        <div style={{ position: "sticky", top: "50%" }}>
+          <Intro scrollNumber={scrollNumber} />
+        </div>
       </div>
-      </wrapper>
     </>
   )
 }
