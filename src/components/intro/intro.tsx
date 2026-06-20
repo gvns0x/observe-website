@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import itemsData from './introItems'
 
 export default function Intro({ scrollNumber, startPosition, step }) {
@@ -10,8 +10,6 @@ export default function Intro({ scrollNumber, startPosition, step }) {
     if (currentIndex < 0) {
         return null
     }
-
-    
 
     return (
         <>
