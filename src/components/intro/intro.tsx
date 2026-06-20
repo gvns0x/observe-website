@@ -7,12 +7,12 @@ export default function Intro({ scrollNumber }) {
     const [shownItems, setShownItems] = useState([])
 
     const items = [
-        <p className={styles.makeItRed}>1</p>,
-        <p>2</p>,
-        <p>3</p>,
-        <p>4</p>,
-        <p>5</p>,
-        <p>6</p>,
+        <p className={styles.makeItRed}>I want to know</p>,
+        <p >if this actually reads</p>,
+        <p>well, because</p>,
+        <p>I'm not so sure</p>,
+        <p>that as I scroll</p>,
+        <p>it really works</p>,
         <p>7</p>,
         <p>8</p>,
         <p>9</p>,
@@ -22,29 +22,20 @@ export default function Intro({ scrollNumber }) {
 
     let unlockedItems = []
     let startPosition = 10
-    let step = 50
+    let step = 200
 
-    for(let i = 0; i < items.length + 1; i++) {
+    for(let i = 0; i < items.length; i++) {
         if(scrollNumber >= startPosition) {
-            unlockedItems.push(items[i]);
+            unlockedItems.push(
+                {...items[i], key:i}
+            );
         }
+        console.log('source index: ', i, 'item: ', items[i])
         
         startPosition = startPosition + step
     }
-    console.log(unlockedItems)
-    const visible = unlockedItems.slice(-3)
-    
-
-    // useEffect(() => {
-    //     let cutItems = items.slice(0,3)
-        
-    //     if (scrollNumber >= 100) {
-    //       setShownItems(cutItems)
-    //     } else {
-    //       setShownItems([])
-    //     }
-    
-    //   }, [scrollNumber])
+    // console.log(unlockedItems)
+    const visible = unlockedItems.slice(-1)
 
     return (
         <>
