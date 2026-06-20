@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Range from '../../utils'
 import styles from './Intro.module.css'
-import introItems from './introItems'
+import itemsData from './introItems'
 
 export default function Intro({ scrollNumber, startPosition, step }) {
     const [list, setList] = useState([])
@@ -9,10 +9,10 @@ export default function Intro({ scrollNumber, startPosition, step }) {
 
     let unlockedItems = []
 
-    for(let i = 0; i < introItems.length; i++) {
+    for(let i = 0; i < itemsData.length; i++) {
         if(scrollNumber >= startPosition) {
             unlockedItems.push(
-                React.cloneElement(introItems[i], {
+                React.cloneElement(itemsData[i], {
                     key:i,
                     className: styles.makeItRed
                 })

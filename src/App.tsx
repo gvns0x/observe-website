@@ -5,7 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 import Intro from './components/intro/intro'
-import introItems from './components/intro/introItems'
+import itemsData from './components/intro/introItems'
 
 function App() {
   const [scrollNumber, setScrollNumber] = useState(0)
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <div className='wrapper' style={{ height: `calc(100vh + ${introScrollDetails.startPosition}px + ${introItems.length * introScrollDetails.step}px)` }}>
+      <div className='wrapper' style={{ height: `calc(100vh + ${introScrollDetails.startPosition}px + ${itemsData.length * introScrollDetails.step}px)` }}>
         <div style={{ position: "sticky", top: "50%" }}>
           <Intro
             scrollNumber={scrollNumber}
