@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <div className='wrapper' style={{ height: `calc(100vh + ${introScrollDetails.startPosition}px + ${itemsData.length * introScrollDetails.step}px)` }}>
+      <div className='wrapper' style={{ height: `calc(100vh + ${introScrollDetails.startPosition}px + ${(itemsData.length - 1) * introScrollDetails.step}px)` }}>
         <div style={{ position: "sticky", top: "50%" }}>
           <Intro
             scrollNumber={scrollNumber}
