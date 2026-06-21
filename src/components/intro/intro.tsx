@@ -27,10 +27,7 @@ export default function Intro({ scrollNumber, startPosition, step }) {
     return (
         <>
             {<Item
-                active="true"
-                itemIndex={itemIndex}
                 blurScrollStart={blurScrollStart}
-                blurScrollStop={blurScrollStop}
                 scrollNumber={scrollNumber}
             />}
         </>
