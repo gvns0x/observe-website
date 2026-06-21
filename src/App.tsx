@@ -27,12 +27,13 @@ function App() {
     // Start showing items when scroll is 10px
     startPosition: 10,
     // Show next item after 200px scroll
-    step: 200
+    step: 200,
+    
   }
 
   return (
     <>
-      <div className='wrapper' style={{ height: `calc(100vh + ${introScrollDetails.startPosition}px + ${(itemsData.length - 1) * introScrollDetails.step}px)` }}>
+      <div className='wrapper' style={{ height: `calc(100vh + 20px + ${introScrollDetails.startPosition}px + ${(itemsData.length - 1) * introScrollDetails.step}px)` }}>
         <div style={{ position: "sticky", top: "50%" }}>
           <Intro
             scrollNumber={scrollNumber}

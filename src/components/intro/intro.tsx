@@ -17,9 +17,8 @@ export default function Intro({ scrollNumber, startPosition, step }) {
         return null
     }
 
-    const blurScrollStart = itemIndex * step + (step + startPosition - 20)
-    const blurScrollStop = itemIndex * step + (step + startPosition)
-    console.log("opacity is ", Math.min(1,1 - (scrollNumber - blurScrollStart) / 20))
+    // Scroll position at which each item starts
+    const slotStart = startPosition + itemIndex * step
 
     // Item is what we'll render. It's always the item in the itemIndex in the array
     const Item = itemsData[itemIndex]
@@ -27,8 +26,9 @@ export default function Intro({ scrollNumber, startPosition, step }) {
     return (
         <>
             {<Item
-                blurScrollStart={blurScrollStart}
+                slotStart={slotStart}
                 scrollNumber={scrollNumber}
+                itemIndex={itemIndex}
             />}
         </>
     )
