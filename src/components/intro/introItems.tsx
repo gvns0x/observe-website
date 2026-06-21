@@ -2,9 +2,8 @@ import styles from './Intro.module.css'
 import styled from 'styled-components'
 
 const IntroElement = styled.p`
-    opacity: ${props => props.scrollNumber > props.blurScrollStart ? "0" : "1" };
-    
-    transition: opacity .3s;
+    opacity: ${props => Math.min(1,1 - (props.scrollNumber - props.blurScrollStart) / 20)};
+    transition: opacity .5s ease-out;
 `
 
 const introItems = [
