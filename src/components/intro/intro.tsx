@@ -17,11 +17,22 @@ export default function Intro({ scrollNumber, startPosition, step }) {
         return null
     }
 
+    const blurScrollStart = itemIndex * step + (step + startPosition - 20)
+    const blurScrollStop = itemIndex * step + (step + startPosition)
+    console.log(scrollNumber >= blurScrollStart, "blur is ", blurScrollStart," and scroll is ", scrollNumber)
+
+    // Item is what we'll render. It's always the item in the itemIndex in the array
     const Item = itemsData[itemIndex]
 
     return (
         <>
-            {<Item active="true" itemIndex={itemIndex} scrollNumber={scrollNumber}/>}
+            {<Item
+                active="true"
+                itemIndex={itemIndex}
+                blurScrollStart={blurScrollStart}
+                blurScrollStop={blurScrollStop}
+                scrollNumber={scrollNumber}
+            />}
         </>
     )
 }
