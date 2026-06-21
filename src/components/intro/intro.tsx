@@ -1,7 +1,7 @@
 import React from "react";
 import itemsData from './introItems'
 
-export default function Intro({ scrollNumber, startPosition, step }) {
+export default function Intro({ scrollNumber, startPosition, step, blurInterval }) {
 
     // Get the index of the item to show, based on the current scrollNumber
     // Does not account for if the index is above the length of the array of items
@@ -24,6 +24,15 @@ export default function Intro({ scrollNumber, startPosition, step }) {
     // Item is what we'll render. It's always the item in the itemIndex in the array
     const Item = itemsData[itemIndex]
 
+    console.log("blur is ", (scrollNumber - (step * itemIndex + (nextSlotStart - slotStart))))
+
+    // 250 - 200*1 + (410 - 210)
+
+    // 210 – 410
+    // (210+100)-210
+    // (scrollNumber+100) - slotStart
+    // ((slotStart+100) - scrollNumber)/100
+
     return (
         <>
             {<Item
@@ -32,6 +41,7 @@ export default function Intro({ scrollNumber, startPosition, step }) {
                 itemIndex={itemIndex}
                 nextSlotStart={nextSlotStart}
                 step={step}
+                blurInterval={blurInterval}
             />}
         </>
     )
