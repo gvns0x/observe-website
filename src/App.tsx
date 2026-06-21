@@ -28,7 +28,7 @@ function App() {
     startPosition: 10,
     // Show next item after 200px scroll
     step: 200,
-    blurInterval: 100
+    blurInterval: 50
   }
 
   return (
