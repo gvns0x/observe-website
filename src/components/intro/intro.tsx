@@ -19,6 +19,7 @@ export default function Intro({ scrollNumber, startPosition, step }) {
 
     // Scroll position at which each item starts
     const slotStart = startPosition + itemIndex * step
+    const nextSlotStart = startPosition + (itemIndex + 1) * step
 
     // Item is what we'll render. It's always the item in the itemIndex in the array
     const Item = itemsData[itemIndex]
@@ -29,6 +30,8 @@ export default function Intro({ scrollNumber, startPosition, step }) {
                 slotStart={slotStart}
                 scrollNumber={scrollNumber}
                 itemIndex={itemIndex}
+                nextSlotStart={nextSlotStart}
+                step={step}
             />}
         </>
     )
