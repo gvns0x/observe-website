@@ -24,15 +24,6 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
     // Item is what we'll render. It's always the item in the itemIndex in the array
     const Item = itemsData[itemIndex]
 
-    console.log("blur is ", (scrollNumber - (step * itemIndex + (nextSlotStart - slotStart))))
-
-    // 250 - 200*1 + (410 - 210)
-
-    // 210 – 410
-    // (210+100)-210
-    // (scrollNumber+100) - slotStart
-    // ((slotStart+100) - scrollNumber)/100
-
     return (
         <>
             {<Item
