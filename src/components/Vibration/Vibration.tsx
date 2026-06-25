@@ -1,17 +1,28 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
-export default function Vibration() {
+const tiltVibration = keyframes`
+        0% {
+            transform: rotate(0.1turn);
+        }
 
-    const Vibration = styled.div`
+        100% {
+            transform: rotate(0turn)
+        }
+    `
+
+    const VibrationBox = styled.div`
         display:inline-flex;
         width:inherit;
         background-color:white;
         padding: 2px 4px;
         border-radius: 8px;
+        animation: ${tiltVibration} .2s ease-in-out;
     `
 
+export default function Vibration() {
+
     return (
-        <Vibration>test</Vibration>
+        <VibrationBox>test</VibrationBox>
     )
 }
