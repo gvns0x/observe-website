@@ -16,7 +16,7 @@ function vibrationGroup(amount = 1) {
     // setTimeout(() => {color = "blue"}, 1000)
 
     return Array.from({length: amount}, (_,i) => (
-        <Vibration style={{color: color}} key={i}/>
+        <Vibration key={i}/>
     ))
 }
 
