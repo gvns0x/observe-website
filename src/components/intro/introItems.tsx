@@ -13,30 +13,26 @@ const IntroElement = styled.div`
     
 `
 function VibrationGroup({amount = 1}) {
-    const [activeIndex, setActiveIndex] = useState(0)
     let vibrationArray = [];
 
-    if()
-
     for(let i = 0; i < amount; i++) {
-
         vibrationArray.push(<Vibration active={true} key={i}/>)
-        
-        
     }
 
-    // return (
-    //     <div style={{display:"inline-flex", gap: "4px"}}>
-    //     {
-    //         Array.from({length: amount}, (_,i) => (
-    //             <Vibration active={true} key={i}/>
-    //         ))}
-    //     </div>
-
-    return(
-        vibrationArray
-    )
+    return vibrationArray
 }
+
+// setTimeout(() => {
+//     setActiveIndex(prev => prev + 1)
+// }, 700);
+
+// function indexChange() {
+//     const [activeIndex, setActiveIndex] = useState(0)
+
+// }
+
+
+
 
 const introItems = [
     ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Vibration guided meditation.</IntroElement>,
