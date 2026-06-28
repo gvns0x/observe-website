@@ -65,7 +65,7 @@ const VibrationBox = styled.div`
         background-color:white;
         padding: 2px 4px;
         border-radius: 8px;
-        animation: ${props => props.active ? tiltVibration : 'none'} .8s ease-in;
+        animation: ${props => props.$active ? tiltVibration : 'none'} .8s ease-in;
     `
 
 export default function Vibration({style, active, onComplete}) {
@@ -79,6 +79,6 @@ export default function Vibration({style, active, onComplete}) {
     }
 
     return (
-        <VibrationBox active={active} style={style} onAnimationEnd={handleAnimationEnd}>pzz</VibrationBox>
+        <VibrationBox $active={active} style={style} onAnimationEnd={handleAnimationEnd}>pzz</VibrationBox>
     )
 }
