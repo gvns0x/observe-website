@@ -29,13 +29,15 @@ function VibrationGroup({amount = 1}) {
     // Builds array, sets active against state, and prepares to run handleComplete
     // when onComplete is called in the Component
     return (
-        Array.from({length: amount}, (_,i) => (
+        <div style={{display:"inline-flex", gap: "4px", marginLeft:"4px"}}>
+        {Array.from({length: amount}, (_,i) => (
         <Vibration
             key={i}
             active={i === activeIndex}
             onComplete={handleComplete}
         />
-    ))
+    ))}
+    </div>
 )
 }
 
