@@ -68,9 +68,15 @@ const VibrationBox = styled.div`
         animation: ${props => props.active ? tiltVibration : 'none'} .8s ease-in;
     `
 
-export default function Vibration({style, active}) {
+export default function Vibration({style, active, onComplete}) {
+
+    function handleAnimationEnd() {
+        if(active) {
+            onComplete()
+        }
+    }
 
     return (
-        <VibrationBox active={active} style={style}>pzz</VibrationBox>
+        <VibrationBox active={active} style={style} onAnimationEnd={handleAnimationEnd}>pzz</VibrationBox>
     )
 }

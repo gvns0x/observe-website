@@ -12,24 +12,32 @@ const IntroElement = styled.div`
     transition: all .3s ease-out;
     
 `
-
-
+// VibrationGroup lets me set how many vibrations I want, and handles animation state
 function VibrationGroup({amount = 1}) {
     const [activeIndex, setActiveIndex] = useState(0)
-    const vibrationArray = Array.from({length: amount}, (_,i) => <Vibration active={true} key={i}/>);
 
-    return vibrationArray
+    // Moves the index of the vibration that will animate to the next one
+    function handleComplete() {
+        setActiveIndex(prev => {
+            if(prev < amount - 1) {
+                return prev + 1
+            }
+            return prev
+        })
+    }
+    
+    // Builds array, sets active against state, and prepares to run handleComplete
+    // when onComplete is called in the Component
+    return (
+        Array.from({length: amount}, (_,i) => (
+        <Vibration
+            key={i}
+            active={i === activeIndex}
+            onComplete={handleComplete}
+        />
+    ))
+)
 }
-
-setTimeout(() => {
-    setActiveIndex(prev => prev + 1)
-}, 700);
-
-function indexChange() {
-    const [activeIndex, setActiveIndex] = useState(0)
-
-}
-
 
 const introItems = [
     ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Vibration guided meditation.</IntroElement>,
