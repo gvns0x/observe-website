@@ -72,7 +72,9 @@ export default function Vibration({style, active, onComplete}) {
 
     function handleAnimationEnd() {
         if(active) {
-            onComplete()
+            setTimeout(() => {
+                onComplete()
+            }, 200);
         }
     }
 
