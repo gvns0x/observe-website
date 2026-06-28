@@ -12,26 +12,23 @@ const IntroElement = styled.div`
     transition: all .3s ease-out;
     
 `
-function VibrationGroup({amount = 1}) {
-    let vibrationArray = [];
 
-    for(let i = 0; i < amount; i++) {
-        vibrationArray.push(<Vibration active={true} key={i}/>)
-    }
+
+function VibrationGroup({amount = 1}) {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const vibrationArray = Array.from({length: amount}, (_,i) => <Vibration active={true} key={i}/>);
 
     return vibrationArray
 }
 
-// setTimeout(() => {
-//     setActiveIndex(prev => prev + 1)
-// }, 700);
+setTimeout(() => {
+    setActiveIndex(prev => prev + 1)
+}, 700);
 
-// function indexChange() {
-//     const [activeIndex, setActiveIndex] = useState(0)
+function indexChange() {
+    const [activeIndex, setActiveIndex] = useState(0)
 
-// }
-
-
+}
 
 
 const introItems = [
