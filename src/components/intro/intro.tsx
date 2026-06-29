@@ -2,6 +2,16 @@ import React from "react";
 import itemsData from './introItems'
 
 export default function Intro({ scrollNumber, startPosition, step, blurInterval }) {
+    const [opacity, setOpacity] = React.useState(1)
+    const valueHeight = 20 + blurInterval + startPosition + (itemsData.length - 1) * step
+
+    React.useEffect(() => {
+        if(scrollNumber >= valueHeight) {
+            console.log("It's bigger")
+        }
+        
+    },[scrollNumber])
+    
 
     // Get the index of the item to show, based on the current scrollNumber
     // Does not account for if the index is above the length of the array of items
@@ -25,8 +35,9 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
     const Item = itemsData[itemIndex]
 
     return (
-        <>
+        <div style={{opacity: `${opacity}`}}>
             {<Item
+                
                 slotStart={slotStart}
                 scrollNumber={scrollNumber}
                 itemIndex={itemIndex}
@@ -34,6 +45,6 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
                 step={step}
                 blurInterval={blurInterval}
             />}
-        </>
+        </div>
     )
 }
