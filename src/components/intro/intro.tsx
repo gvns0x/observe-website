@@ -7,7 +7,7 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
 
     React.useEffect(() => {
         if(scrollNumber >= valueHeight) {
-            console.log("It's bigger")
+            console.log("It's bigger: ", scrollNumber, " > ", valueHeight)
         }
         
     },[scrollNumber])
