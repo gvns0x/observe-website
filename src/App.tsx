@@ -12,9 +12,9 @@ function App() {
 
   useEffect(() => {
     function handleScroll() {
-      setScrollNumber(window.scrollY)
+        setScrollNumber(window.scrollY)
     }
-
+    
     window.addEventListener("scroll", handleScroll)
 
     return () => {
@@ -27,7 +27,7 @@ function App() {
     // Start showing items when scroll is 10px
     startPosition: 10,
     // Show next item after 200px scroll
-    step: 250,
+    step: 220,
     blurInterval: 50
   }
 

@@ -5,13 +5,14 @@ import styled from 'styled-components'
 import Vibration from '../Vibration/Vibration'
 
 const IntroElement = styled.div`
-    opacity: ${props => Math.min(1,(props.scrollNumber - props.slotStart) / 20 )};
-    filter: blur(${props => props.scrollNumber < (props.step * props.itemIndex + (props.nextSlotStart - props.slotStart)/2)
+    opacity: ${props => props.firstItem ? 1 : Math.min(1,(props.scrollNumber - props.slotStart) / 20 )};
+    filter: blur(${props => (props.scrollNumber && !props.firstItem)  < (props.step * props.itemIndex + (props.nextSlotStart - props.slotStart)/2)
         ? (((props.slotStart+props.blurInterval) - props.scrollNumber)/(props.blurInterval*1.5))
         : 0}px);
     transition: all .3s ease-out;
     
 `
+
 // VibrationGroup lets me set how many vibrations I want, and handles animation state
 function VibrationGroup({amount = 1}) {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -43,7 +44,7 @@ function VibrationGroup({amount = 1}) {
 
 const introItems = [
     ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}> Apple Watch vibration guided meditation in 3 phases.</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>1 vibration {<VibrationGroup/>}</IntroElement>,
+    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>1111 vibration {<VibrationGroup/>}</IntroElement>,
     ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Focus on your breath</IntroElement>,
     ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>2 vibrations {<VibrationGroup amount={2}/>}</IntroElement>,
     ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Switch the attention to your body</IntroElement>,
