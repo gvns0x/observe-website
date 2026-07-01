@@ -4,13 +4,16 @@ import itemsData from './introItems'
 export default function Intro({ scrollNumber, startPosition, step, blurInterval }) {
     const [opacity, setOpacity] = React.useState(1)
     const [blur, setBlur] = React.useState(0)
+    
     // Where intro should start 
-    const startOpacityDecrease = 20 + blurInterval + startPosition + (itemsData.length - 1) * step
+    const endOfIntroScroll = 20 + blurInterval + startPosition + (itemsData.length - 1) * step
+    // Amount of scroll that will influence styles
     const scrollInterval = 200
 
     React.useEffect(() => {
-        if(scrollNumber >= startOpacityDecrease) {
-            setOpacity((startOpacityDecrease + scrollInterval - scrollNumber)/scrollInterval)
+        if(scrollNumber >= endOfIntroScroll) {
+            setOpacity((endOfIntroScroll + scrollInterval - scrollNumber)/scrollInterval)
+            setBlur()
         }
         
     },[scrollNumber])
