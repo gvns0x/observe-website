@@ -3,11 +3,14 @@ import itemsData from './introItems'
 
 export default function Intro({ scrollNumber, startPosition, step, blurInterval }) {
     const [opacity, setOpacity] = React.useState(1)
-    const valueHeight = 20 + blurInterval + startPosition + (itemsData.length - 1) * step
+    const [blur, setBlur] = React.useState(0)
+    // Where intro should start 
+    const startOpacityDecrease = 20 + blurInterval + startPosition + (itemsData.length - 1) * step
+    const scrollInterval = 200
 
     React.useEffect(() => {
-        if(scrollNumber >= valueHeight) {
-            console.log("It's bigger: ", scrollNumber, " > ", valueHeight)
+        if(scrollNumber >= startOpacityDecrease) {
+            setOpacity((startOpacityDecrease + scrollInterval - scrollNumber)/scrollInterval)
         }
         
     },[scrollNumber])
@@ -35,7 +38,7 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
     const Item = itemsData[itemIndex]
 
     return (
-        <div style={{opacity: `${opacity}`}}>
+        <div style={{opacity: `${opacity}`, filter: `blur(${blur}px)`}}>
             {<Item
                 
                 slotStart={slotStart}
