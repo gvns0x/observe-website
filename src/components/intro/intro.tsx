@@ -5,8 +5,8 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
     const [opacity, setOpacity] = React.useState(1)
     const [blur, setBlur] = React.useState(0)
     
-    // Where intro should start 
-    const endOfIntroScroll = 20 + blurInterval + startPosition + (itemsData.length - 1) * step
+    // Amount of scroll after which styles should be influenced (bumped by 50 as a small delay)
+    const endOfIntroScroll = 20 + blurInterval + startPosition + (itemsData.length - 1) * step + 50
     // Amount of scroll that will influence styles
     const scrollInterval = 200
 
