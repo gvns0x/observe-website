@@ -13,7 +13,7 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
     React.useEffect(() => {
         if(scrollNumber >= endOfIntroScroll) {
             setOpacity((endOfIntroScroll + scrollInterval - scrollNumber)/scrollInterval)
-            setBlur()
+            setBlur((scrollNumber - endOfIntroScroll)/scrollInterval)
         }
         
     },[scrollNumber])
