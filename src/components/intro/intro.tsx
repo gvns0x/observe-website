@@ -43,13 +43,12 @@ export default function Intro({ scrollNumber, startPosition, step, blurInterval 
     return (
         <div style={{opacity: `${opacity}`, filter: `blur(${blur}px)`}}>
             {<Item
-                
-                slotStart={slotStart}
-                scrollNumber={scrollNumber}
-                itemIndex={itemIndex}
-                nextSlotStart={nextSlotStart}
-                step={step}
-                blurInterval={blurInterval}
+                $slotStart={slotStart}
+                $scrollNumber={scrollNumber}
+                $itemIndex={itemIndex}
+                $nextSlotStart={nextSlotStart}
+                $step={step}
+                $blurInterval={blurInterval}
             />}
         </div>
     )

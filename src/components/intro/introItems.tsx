@@ -1,16 +1,37 @@
-import React, { useState } from 'react'
-import styles from './Intro.module.css'
+import { useState } from 'react'
 import styled from 'styled-components'
 
 import Vibration from '../Vibration/Vibration'
 
-const IntroElement = styled.div`
-    opacity: ${props => props.firstItem ? 1 : Math.min(1,(props.scrollNumber - props.slotStart) / 20 )};
-    filter: blur(${props => (props.scrollNumber && !props.firstItem)  < (props.step * props.itemIndex + (props.nextSlotStart - props.slotStart)/2)
-        ? (((props.slotStart+props.blurInterval) - props.scrollNumber)/(props.blurInterval*1.5))
-        : 0}px);
-    transition: all .3s ease-out;
-    
+type IntroElementAttrs = {
+    $firstItem?: boolean
+    $scrollNumber: number
+    $slotStart: number
+    $itemIndex: number
+    $nextSlotStart: number
+    $step: number
+    $blurInterval: number
+}
+
+function getOpacity({ $firstItem, $scrollNumber, $slotStart }: IntroElementAttrs) {
+    if ($firstItem) return 1
+    return Math.min(1, ($scrollNumber - $slotStart) / 20)
+}
+
+function getBlur({ $firstItem, $scrollNumber, $slotStart, $itemIndex, $nextSlotStart, $step, $blurInterval }: IntroElementAttrs) {
+    if ($firstItem) return 0
+    const midpoint = $step * $itemIndex + ($nextSlotStart - $slotStart) / 2
+    if ($scrollNumber >= midpoint) return 0
+    return (($slotStart + $blurInterval) - $scrollNumber) / ($blurInterval * 1.5)
+}
+
+const IntroElement = styled.div.attrs<IntroElementAttrs>(props => ({
+    style: {
+        opacity: getOpacity(props),
+        filter: `blur(${getBlur(props)}px)`,
+    },
+}))`
+    transition: all 0.3s ease-out;
 `
 
 // VibrationGroup lets me set how many vibrations I want, and handles animation state
@@ -43,14 +64,14 @@ function VibrationGroup({amount = 1}) {
 }
 
 const introItems = [
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}> Apple Watch vibration guided meditation in 3 phases.</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>1111 vibration {<VibrationGroup/>}</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Focus on your breath</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>2 vibrations {<VibrationGroup amount={2}/>}</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Switch the attention to your body</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>3 vibrations {<VibrationGroup amount={3}/>}</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Express gratefulness</IntroElement>,
-    ({scrollNumber, slotStart, itemIndex, nextSlotStart, step, blurInterval}) => <IntroElement slotStart={slotStart} scrollNumber={scrollNumber} itemIndex={itemIndex} nextSlotStart={nextSlotStart} step={step} blurInterval={blurInterval}>Done {<VibrationGroup/>}</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}> Apple Watch vibration guided meditation in 3 phases.</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>1111 vibration {<VibrationGroup/>}</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Focus on your breath</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>2 vibrations {<VibrationGroup amount={2}/>}</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Switch the attention to your body</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>3 vibrations {<VibrationGroup amount={3}/>}</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Express gratefulness</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Done {<VibrationGroup/>}</IntroElement>,
 ]
 
 export default introItems
