@@ -25,7 +25,7 @@ function App() {
 
   const introScrollDetails = {
     // Start showing items when scroll is 10px
-    startPosition: 10,
+    startPosition: 0,
     // Show next item after 200px scroll
     step: 220,
     blurInterval: 50
