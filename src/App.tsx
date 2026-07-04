@@ -28,6 +28,7 @@ function App() {
     startPosition: 0,
     // Show next item after 200px scroll
     step: 220,
+    // Number of pixels through which we'll scroll and see the blur
     blurInterval: 50
   }
 
