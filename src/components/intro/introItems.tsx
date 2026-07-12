@@ -64,13 +64,10 @@ function VibrationGroup({amount = 1}) {
 }
 
 const introItems = [
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}> Apple Watch vibration guided meditation in 3 phases.</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>1111 vibration {<VibrationGroup/>}</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Focus on your breath</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>2 vibrations {<VibrationGroup amount={2}/>}</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Switch the attention to your body</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>3 vibrations {<VibrationGroup amount={3}/>}</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Express gratefulness</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}> Apple Watch vibration guided meditation in 33 phases.</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>1 vibration {<VibrationGroup/>}</div> Focus on your breath</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>2 vibrations {<VibrationGroup amount={2}/>}</div>Switch the attention to your body</IntroElement>,
+    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>3 vibrations {<VibrationGroup amount={3}/>}</div>Express gratefulness</IntroElement>,
     (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Done {<VibrationGroup/>}</IntroElement>,
 ]
 
