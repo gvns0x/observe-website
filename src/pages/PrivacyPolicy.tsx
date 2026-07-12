@@ -4,12 +4,12 @@ import styled from 'styled-components'
 function PrivacyPolicy() {
 
     const Wrapper = styled.div`
-        background-color: red;
         max-width: 700px;
         width:100%;
         display:flex;
         gap:24px;
         flex-direction:column;
+        padding: 40px 0px;
 `
 
     const PrivacyItem = styled.div`
@@ -22,7 +22,6 @@ function PrivacyPolicy() {
     return (
         <div style={{
             width: "100%",
-            backgroundColor: "blue",
             display: "flex",
             justifyContent: "center"
         }}>
