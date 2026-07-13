@@ -15,16 +15,6 @@ const HeroTitle = styled.h1`
     margin:0;
 `
 
-const HeroBlock = styled.div`
-    display:flex;
-    flex-direction:row;
-    gap: 32px;
-    justify-content: center;
-    align-items: center;
-    font-size:16px;
-    color: #91877A;
-`
-
 const FixedHeader = styled.div`
     position:fixed;
     top:0;
