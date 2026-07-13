@@ -27,7 +27,8 @@ const HeroBlock = styled.div`
 `
 
 const FixedHeader = styled.div`
-
+    position:fixed;
+    top:0;
 `
 
 function Temporary() {
