@@ -35,6 +35,7 @@ function Temporary() {
         <Wrapper style={{alignItems:"center"}}>
             
             <div style={{display:"flex", flexDirection:"column", gap:"16px"}}>
+            <img src={Logo} alt="Observe app logo, a marble circle"/>
             <HeroBlock>
                     <p>Breath</p>
                     <p>Body</p>
@@ -43,7 +44,7 @@ function Temporary() {
                 <HeroTitle>Apple Watch vibration guided meditation in 3 phases.</HeroTitle>
                 
             </div>
-            <img src={HeroWatch} style={heroImageStyle} />
+            <img src={HeroWatch} style={heroImageStyle} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases."/>
         </Wrapper>
     )
 }
