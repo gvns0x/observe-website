@@ -18,10 +18,10 @@ const ChildContainer = styled.div`
     padding: 40px 0px;
 `
 
-function Wrapper({children}) {
+function Wrapper({children, style}) {
     return(
         <ParentContainer>
-            <ChildContainer>
+            <ChildContainer style={style}>
             {children}
             </ChildContainer>
         </ParentContainer>

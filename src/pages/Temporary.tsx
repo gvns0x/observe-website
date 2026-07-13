@@ -12,6 +12,7 @@ const HeroTitle = styled.h1`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    margin:0;
 `
 
 const HeroBlock = styled.div`
@@ -21,6 +22,7 @@ const HeroBlock = styled.div`
     justify-content: center;
     align-items: center;
     font-size:16px;
+    color: #91877A;
 `
 
 function Temporary() {
@@ -29,15 +31,19 @@ function Temporary() {
         width: "24vh",
     }
 
-    return(
-        <Wrapper>
-        <img src={HeroWatch} style={heroImageStyle}/>
-            <HeroTitle>Apple Watch vibration guided meditation in 3 phases.</HeroTitle>
+    return (
+        <Wrapper style={{alignItems:"center"}}>
+            
+            <div style={{display:"flex", flexDirection:"column", gap:"16px"}}>
             <HeroBlock>
-                <p>Breath</p>
-                <p>Body</p>
-                <p>Gratitude</p>
-            </HeroBlock>
+                    <p>Breath</p>
+                    <p>Body</p>
+                    <p>Gratitude</p>
+                </HeroBlock>
+                <HeroTitle>Apple Watch vibration guided meditation in 3 phases.</HeroTitle>
+                
+            </div>
+            <img src={HeroWatch} style={heroImageStyle} />
         </Wrapper>
     )
 }
