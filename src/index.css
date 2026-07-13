@@ -59,6 +59,7 @@
   min-height: 100svh;
   display: flex;
   box-sizing: border-box;
+  cursor:default;
 }
 
 body {
