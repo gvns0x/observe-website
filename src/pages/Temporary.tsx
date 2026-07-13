@@ -30,10 +30,11 @@ function Temporary() {
 
     return (
         <Wrapper childStyle={{ alignItems: "center", justifyContent: "center", gap: "56px" }}>
-            <div style={{}}>
+            <div style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"24px"}}>
                 <img src={Logo} alt="Observe app logo, a marble circle" style={{width: "40px"}} />
-                <p>Coming soon</p>
+                
                 <HeroTitle>Apple Watch vibration guided meditation in 3 phases.</HeroTitle>
+                <p>Coming soon</p>
             </div>
             <img src={HeroWatch} style={{width: "24vh"}} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases: breath, body, and gratitude." />
 
