@@ -1,5 +1,6 @@
 import React from 'react'
 import Wrapper from '../components/Wrapper/Wrapper'
+import HeroWatch from '../assets/herowatch.png'
 
 function Temporary() {
     return(
