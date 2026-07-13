@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 import Wrapper from '../components/Wrapper/Wrapper'
 
 const PrivacyItem = styled.div`
@@ -7,6 +8,23 @@ const PrivacyItem = styled.div`
     text-align:left;
     gap: 0px;
     width:100%;
+`
+
+const Button = styled.button`
+    padding: 8px 12px;
+    display:flex;
+    width:fit-content;
+    border: none;
+    background-color:rgba(0,0,0,.04);
+    font-size: 14px;
+    border-radius: 6px;
+    cursor:pointer;
+    transition: .1s ease-in;
+
+    &:hover {
+        background-color:rgba(0,0,0,.07);
+        transition: .2s ease-in;
+    }
 `
 
 const privacyItems = [
@@ -89,8 +107,12 @@ const privacyItems = [
 ]
 
 function PrivacyPolicy() {
+
+    const navigate = useNavigate()
+
     return (
             <Wrapper>
+            <Button onClick={() => navigate("/")}>Home</Button>
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", textAlign: "left" }}>
                     <h1>Privacy Policy</h1>
                     <h5>Observe</h5>
