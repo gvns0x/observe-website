@@ -29,12 +29,13 @@ const HeroBlock = styled.div`
 const FixedHeader = styled.div`
     position:fixed;
     top:0;
+    padding: 24px 0px;
 `
 
 function Temporary() {
 
     return (
-        <Wrapper parentStyle={{ justifyContent: "center" }} childStyle={{ alignItems: "center", justifyContent: "center", gap: "56px" }}>
+        <Wrapper parentStyle={{ justifyContent: "center"}} childStyle={{ alignItems: "center", justifyContent: "center", gap: "56px" }}>
             <FixedHeader>
                 <img src={Logo} alt="Observe app logo, a marble circle" style={{ width: "40px" }} />
             </FixedHeader>
