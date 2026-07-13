@@ -1,13 +1,5 @@
 import styled from 'styled-components'
-
-const Wrapper = styled.div`
-    max-width: 700px;
-    width:100%;
-    display:flex;
-    gap:24px;
-    flex-direction:column;
-    padding: 40px 0px;
-`
+import Wrapper from '../components/Wrapper/Wrapper'
 
 const PrivacyItem = styled.div`
     display:inline-flex;
@@ -98,12 +90,6 @@ const privacyItems = [
 
 function PrivacyPolicy() {
     return (
-        <div style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            padding: "0px 24px"
-        }}>
             <Wrapper>
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", textAlign: "left" }}>
                     <h1>Privacy Policy</h1>
@@ -126,7 +112,6 @@ function PrivacyPolicy() {
                     </PrivacyItem>
                 ))}
             </Wrapper>
-        </div>
     )
 }
 

@@ -6,6 +6,7 @@ const ParentContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items:center;
+    padding: 0px 24px;
 `
 
 const ChildContainer = styled.div`
@@ -15,7 +16,6 @@ const ChildContainer = styled.div`
     gap:24px;
     flex-direction:column;
     padding: 40px 0px;
-    background-color: yellow;
 `
 
 function Wrapper({children}) {
