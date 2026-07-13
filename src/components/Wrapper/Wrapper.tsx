@@ -1,4 +1,11 @@
+import type { CSSProperties, ReactNode } from 'react'
 import styled from 'styled-components'
+
+type WrapperProps = {
+    children: ReactNode
+    parentStyle?: CSSProperties
+    childStyle?: CSSProperties
+}
 
 const ParentContainer = styled.div`
     width:100%;
@@ -17,7 +24,7 @@ const ChildContainer = styled.div`
     padding: 40px 0px;
 `
 
-function Wrapper({children, parentStyle, childStyle}) {
+function Wrapper({children, parentStyle, childStyle}: WrapperProps) {
     return(
         <ParentContainer style={parentStyle}>
             <ChildContainer style={childStyle}>

@@ -1,7 +1,14 @@
 import React from "react";
 import itemsData from './introItems'
 
-export default function Intro({ scrollNumber, startPosition, step, blurInterval }) {
+type IntroProps = {
+    scrollNumber: number
+    startPosition: number
+    step: number
+    blurInterval: number
+}
+
+export default function Intro({ scrollNumber, startPosition, step, blurInterval }: IntroProps) {
     const [opacity, setOpacity] = React.useState(1)
     const [blur, setBlur] = React.useState(0)
     
