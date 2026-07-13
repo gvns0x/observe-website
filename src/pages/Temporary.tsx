@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Wrapper from '../components/Wrapper/Wrapper'
 
 import HeroWatch from '../assets/herowatch.png'
+import Logo from '../assets/logo.png'
 
 
 const HeroTitle = styled.h1`
@@ -27,24 +28,15 @@ const HeroBlock = styled.div`
 
 function Temporary() {
 
-    const heroImageStyle = {
-        width: "24vh",
-    }
-
     return (
-        <Wrapper style={{alignItems:"center"}}>
-            
-            <div style={{display:"flex", flexDirection:"column", gap:"16px"}}>
-            <img src={Logo} alt="Observe app logo, a marble circle"/>
-            <HeroBlock>
-                    <p>Breath</p>
-                    <p>Body</p>
-                    <p>Gratitude</p>
-                </HeroBlock>
+        <Wrapper childStyle={{ alignItems: "center", justifyContent: "center", gap: "56px" }}>
+            <div style={{}}>
+                <img src={Logo} alt="Observe app logo, a marble circle" style={{width: "40px"}} />
+                <p>Coming soon</p>
                 <HeroTitle>Apple Watch vibration guided meditation in 3 phases.</HeroTitle>
-                
             </div>
-            <img src={HeroWatch} style={heroImageStyle} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases."/>
+            <img src={HeroWatch} style={{width: "24vh"}} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases: breath, body, and gratitude." />
+
         </Wrapper>
     )
 }
