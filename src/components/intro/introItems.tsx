@@ -35,7 +35,7 @@ const IntroElement = styled.div.attrs<IntroElementAttrs>(props => ({
 `
 
 // VibrationGroup lets me set how many vibrations I want, and handles animation state
-function VibrationGroup({amount = 1}) {
+function VibrationGroup({amount = 1}: {amount?: number}) {
     const [activeIndex, setActiveIndex] = useState(0)
 
     // Moves the index of the vibration that will animate to the next one
