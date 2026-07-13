@@ -1,8 +1,11 @@
 import React from 'react'
+import Wrapper from '../components/Wrapper/Wrapper'
 
 function Temporary() {
     return(
-        <h1>Hi</h1>
+        <Wrapper>
+            <p>Hey, there</p>
+        </Wrapper>
     )
 }
 
