@@ -88,6 +88,14 @@ h2 {
     font-size: 20px;
   }
 }
+h3 {
+  margin:12px 0px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+}
+h5 {
+  font-weight: 600;
+}
 p {
   margin: 0;
 }
