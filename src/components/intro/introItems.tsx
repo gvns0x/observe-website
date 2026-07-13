@@ -64,11 +64,11 @@ function VibrationGroup({amount = 1}) {
 }
 
 const introItems = [
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}> Apple Watch vibration guided meditation in 3 phases.</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>1 vibration {<VibrationGroup/>}</div> Focus on your breath</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>2 vibrations {<VibrationGroup amount={2}/>}</div>Switch the attention to your body</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>3 vibrations {<VibrationGroup amount={3}/>}</div>Express gratefulness</IntroElement>,
-    (props) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Done {<VibrationGroup/>}</IntroElement>,
+    (props: IntroElementAttrs) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}> Apple Watch vibration guided meditation in 3 phases.</IntroElement>,
+    (props: IntroElementAttrs) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>1 vibration {<VibrationGroup/>}</div> Focus on your breath</IntroElement>,
+    (props: IntroElementAttrs) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>2 vibrations {<VibrationGroup amount={2}/>}</div>Switch the attention to your body</IntroElement>,
+    (props: IntroElementAttrs) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}><div>3 vibrations {<VibrationGroup amount={3}/>}</div>Express gratefulness</IntroElement>,
+    (props: IntroElementAttrs) => <IntroElement {...props} $firstItem={props.$itemIndex === 0}>Done {<VibrationGroup/>}</IntroElement>,
 ]
 
 export default introItems
