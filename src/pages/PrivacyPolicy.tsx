@@ -14,6 +14,7 @@ const PrivacyItem = styled.div`
     flex-direction:column;
     text-align:left;
     gap: 0px;
+    width:100%;
 `
 
 const privacyItems = [
@@ -100,7 +101,8 @@ function PrivacyPolicy() {
         <div style={{
             width: "100%",
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
+            padding: "0px 24px"
         }}>
             <Wrapper>
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", textAlign: "left" }}>
