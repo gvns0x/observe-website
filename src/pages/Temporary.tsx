@@ -13,6 +13,7 @@ const HeroTitle = styled.h1`
     background-clip: text;
     color: transparent;
     margin:0;
+    max-width: 640px;
 `
 
 const FixedHeader = styled.div`
@@ -30,7 +31,7 @@ function Temporary() {
             </FixedHeader>
             <img src={HeroWatch} style={{ width: "24vh" }} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases: breath, body, and gratitude." />
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "24px" }}>
-                <HeroTitle>Apple Watch vibration guided meditation in 3 phases.</HeroTitle>
+                <HeroTitle>Vibration-guided meditation in three phases.</HeroTitle>
                 <p>Coming soon</p>
             </div>
 
