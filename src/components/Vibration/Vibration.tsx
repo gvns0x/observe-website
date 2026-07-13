@@ -1,4 +1,7 @@
+import type { CSSProperties } from 'react';
 import styled, { keyframes } from 'styled-components'
+
+type VibrationBoxProps = {$active?: boolean}
 
 const tiltVibration = keyframes`
         0% {
@@ -58,7 +61,7 @@ const tiltVibration = keyframes`
         }
     `
 
-const VibrationBox = styled.div`
+const VibrationBox = styled.div<VibrationBoxProps>`
         display:inline-flex;
         width:inherit;
         background-color:white;
@@ -67,7 +70,13 @@ const VibrationBox = styled.div`
         animation: ${props => props.$active ? tiltVibration : 'none'} .8s ease-in;
     `
 
-export default function Vibration({style, active, onComplete}) {
+type VibrationProps = {
+    style?: CSSProperties
+    active: boolean
+    onComplete: () => void
+}
+
+export default function Vibration({style, active, onComplete}: VibrationProps) {
 
     function handleAnimationEnd() {
         if(active) {
