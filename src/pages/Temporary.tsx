@@ -29,7 +29,7 @@ function Temporary() {
             <FixedHeader>
                 <img src={Logo} alt="Observe app logo, a marble circle" style={{ width: "40px" }} />
             </FixedHeader>
-            <img src={HeroWatch} style={{ width: "24vh", filter: "drop-shadow(0 8px 24px rgba(60, 54, 44, 0.2))"}} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases: breath, body, and gratitude." />
+            <img src={HeroWatch} style={{ width: "28vh", filter: "drop-shadow(0 8px 24px rgba(60, 54, 44, 0.2))"}} alt="Observe app in an Apple Watch. Shows a breakdown of the 3 different meditation phases: breath, body, and gratitude." />
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "24px" }}>
                 <HeroTitle>Vibration-guided meditation in three phases.</HeroTitle>
                 <p>Coming soon</p>
