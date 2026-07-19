@@ -1,3 +1,3 @@
 # Observe
 
-Website for upcoming meditation WatchOS app, observe.
+Website for meditation WatchOS app, observe.
